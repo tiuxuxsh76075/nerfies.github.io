@@ -156,7 +156,71 @@
     </div>
   </div>
 </section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methods</h2>
+        <div class="content has-text-justified">
+          <p>
+            The following sections describe the detailed methodology employed in ProLLM for protein-protein interaction prediction. This framework is divided into four key sectors, each contributing to the overall performance improvement in predicting protein interactions.
+          </p>
+        </div>
 
+        <!-- Sector 1: Protein data to natural language in ProCoT format -->
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Sector 1: Protein Data to Natural Language in ProCoT Format</h3>
+          <p>
+            In the first step of our methodology, we transform raw protein data into natural language prompts in the Protein Chain of Thought (ProCoT) format. This process simulates the biological signaling pathways between proteins, using descriptions of actions such as "activate", "inhibit", and "bind" to represent the interactions. By converting these structured data into a natural language format, we enable the large language model (LLM) to process and reason about the relationships between proteins step by step.
+          </p>
+          <p>
+            For example, a typical ProCoT prompt might be: "<Protein_A> acts as a receptor protein, activate <Protein_B>. <Protein_B> acts as a signaling protein, inhibit <Protein_C>. <Protein_C> acts as an effector protein, catalysis <Protein_D>. What is the relationship between <Protein_A> and <Protein_D>?" This helps the model simulate the biological reasoning chain, leading to more accurate interaction predictions.
+          </p>
+        </div>
+
+        <!-- Sector 2: Replace with ProtTrans Embedding -->
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Sector 2: Replace with ProtTrans Embedding</h3>
+          <p>
+            In this step, we enhance the LLM’s understanding of protein sequences by replacing standard language embeddings with protein-specific embeddings generated from the ProtTrans model. ProtTrans, a large-scale pre-trained model, generates embeddings that capture the biophysical and structural properties of proteins.
+          </p>
+          <p>
+            By integrating ProtTrans embeddings directly into the LLM, we provide it with richer biological information, allowing it to better understand the relationships between proteins. This step is crucial for improving the model’s performance in recognizing complex protein interactions beyond simple textual descriptions.
+          </p>
+        </div>
+
+        <!-- Sector 3: Instruction Fine-tuning on ProLLM -->
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Sector 3: Instruction Fine-tuning on ProLLM</h3>
+          <p>
+            After embedding replacement, we fine-tune the ProLLM on a protein knowledge dataset using an instruction-based approach. This fine-tuning process allows the model to gain specialized knowledge about proteins, including their functions and biological processes. We use instruction datasets like Mol-Instructions, which provide detailed prompts and corresponding answers about protein functions.
+          </p>
+          <p>
+            For instance, a fine-tuning instruction might ask: "Based on the following protein sequence, predict its function." The model is then able to infer important details about the protein’s role in various biological processes, further enhancing its predictive power when applied to new protein-protein interaction tasks.
+          </p>
+        </div>
+
+        <!-- Sector 4: Train on ProCoT Format Dataset -->
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Sector 4: Train on ProCoT Format Dataset</h3>
+          <p>
+            In the final step, we train the ProLLM on datasets formatted in the ProCoT structure. The dataset contains complex signaling pathways between proteins, where the model learns to predict the type of interaction (e.g., activation, inhibition) between two proteins.
+          </p>
+          <p>
+            During training, the model is presented with input questions such as: "<Protein_A> activates <Protein_B>, which inhibits <Protein_C>. What is the relationship between <Protein_A> and <Protein_D>?" The model’s output is then compared to the real answer, and the loss is calculated to fine-tune the predictions. This process iteratively improves the model’s accuracy in predicting protein-protein interactions.
+          </p>
+        </div>
+
+        <!-- 插入图片 -->
+        <figure>
+           <img src="./static/images/main.png" alt="ProLLM Methodology">
+           <figcaption>Figure: Overview of the ProLLM Framework and Methodology</figcaption>
+        </figure>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- 结论部分 -->
 <section class="section">
