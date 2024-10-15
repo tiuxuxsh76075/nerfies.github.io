@@ -222,6 +222,54 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+        
+        <!-- Comparative Experiment -->
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Comparative Experiment</h3>
+          <p>
+            We conducted extensive experiments to evaluate the performance of ProLLM compared to existing models. The comparison includes models based on Convolutional Neural Networks (CNNs), Graph Neural Networks (GNNs), and other Large Language Models (LLMs). The results were evaluated on several widely used Protein-Protein Interaction (PPI) datasets, including Human, SHS27K, SHS148K, and STRING.
+          </p>
+          <p>
+            ProLLM outperforms existing models in terms of both accuracy and generalizability. The key advantage of ProLLM lies in its ability to model complex protein signaling pathways through the ProCoT format, which allows it to capture indirect interactions between proteins more effectively than traditional models.
+          </p>
+        </div>
+
+        <!-- Insert Comparison Table or Image -->
+        <figure>
+           <img src="./static/images/comparison_exp.png" alt="Comparison of Model Performance">
+           <figcaption>Figure: Performance Comparison between ProLLM and Baseline Methods on Various Datasets</figcaption>
+        </figure>
+
+        <!-- Comparative Results Explanation -->
+        <div class="content has-text-justified">
+          <p>
+            The comparison results show that ProLLM achieves significantly higher micro-F1 scores across all datasets. For example, on the Human dataset, ProLLM achieved a micro-F1 score of 91.05, surpassing GNN-PPI's score of 78.61 and CNN-based methods like DPPI's score of 54.19. Similar improvements were observed in SHS27K, SHS148K, and STRING datasets, where ProLLM consistently demonstrated better performance due to its ability to model non-physical connections between proteins.
+          </p>
+          <p>
+            The following table and figure summarize the comparative performance of different models, highlighting ProLLM's superiority in both pre-trained and non-pre-trained setups.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+              
 <!-- 结论部分 -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -239,6 +287,10 @@
   </div>
 </section>
 
+
+
+
+              
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
