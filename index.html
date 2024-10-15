@@ -260,7 +260,45 @@
   </div>
 </section>
 
+<!-- 消融实验部分 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Ablation Study</h3>
+        
+        <!-- Ablation Study Description -->
+        <div class="content has-text-justified">
+          <p>
+            To better understand the contribution of each component in ProLLM, we conducted an ablation study. The ablation experiments were performed by systematically removing or altering key components of the model to assess their impact on overall performance. The components studied include:
+          </p>
+          <ul>
+            <li><strong>ProCoT format:</strong> Removing or shuffling the ProCoT data disrupts the biological reasoning chain, which affects the model's ability to simulate signaling pathways.</li>
+            <li><strong>Embedding Replacement:</strong> Removing the protein-specific embeddings from ProtTrans reduces the model’s capacity to understand protein sequences, impacting the prediction accuracy.</li>
+            <li><strong>Instruction Fine-tuning:</strong> Omitting the instruction-based fine-tuning on protein knowledge datasets limits the model’s knowledge about biological functions, leading to less accurate predictions.</li>
+          </ul>
+        </div>
 
+        <!-- Insert Ablation Results Image -->
+        <figure>
+           <img src="./static/images/ablation.png" alt="Ablation Study Results">
+           <figcaption>Figure: Ablation Study Results on Various Datasets</figcaption>
+        </figure>
+
+        <!-- Ablation Study Results Explanation -->
+        <div class="content has-text-justified">
+          <p>
+            The results of the ablation study, as shown in the figure, demonstrate the importance of each component in ProLLM's overall performance. Removing the ProCoT format resulted in the largest decrease in performance, as the model was no longer able to reason about signaling pathways. Without ProtTrans embeddings, the model’s understanding of protein sequences was significantly reduced, resulting in lower micro-F1 scores across all datasets. Lastly, the removal of instruction fine-tuning also caused a notable drop in performance, particularly in tasks that required understanding protein functions.
+          </p>
+          <p>
+            These findings highlight the critical role each component plays in enhancing the predictive capabilities of ProLLM, particularly the ProCoT format and embedding replacement with ProtTrans.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
